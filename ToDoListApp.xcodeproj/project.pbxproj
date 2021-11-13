@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		CE66BC94273FACE3002D0AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66BC93273FACE3002D0AEC /* AppDelegate.swift */; };
 		CE66BC96273FACE3002D0AEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66BC95273FACE3002D0AEC /* SceneDelegate.swift */; };
-		CE66BC98273FACE3002D0AEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66BC97273FACE3002D0AEC /* ViewController.swift */; };
+		CE66BC98273FACE3002D0AEC /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66BC97273FACE3002D0AEC /* ListController.swift */; };
 		CE66BC9B273FACE3002D0AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE66BC99273FACE3002D0AEC /* Main.storyboard */; };
 		CE66BC9E273FACE3002D0AEC /* ToDoListApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE66BC9C273FACE3002D0AEC /* ToDoListApp.xcdatamodeld */; };
 		CE66BCA0273FACE5002D0AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE66BC9F273FACE5002D0AEC /* Assets.xcassets */; };
 		CE66BCA3273FACE5002D0AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE66BCA1273FACE5002D0AEC /* LaunchScreen.storyboard */; };
+		CE66BCAC273FB360002D0AEC /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66BCAB273FB360002D0AEC /* ListViewModel.swift */; };
+		CE66BCAF273FBBD2002D0AEC /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66BCAE273FBBD2002D0AEC /* CoreDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE66BC90273FACE3002D0AEC /* ToDoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE66BC93273FACE3002D0AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE66BC95273FACE3002D0AEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE66BC97273FACE3002D0AEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE66BC97273FACE3002D0AEC /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		CE66BC9A273FACE3002D0AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE66BC9D273FACE3002D0AEC /* ToDoListApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoListApp.xcdatamodel; sourceTree = "<group>"; };
 		CE66BC9F273FACE5002D0AEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE66BCA2273FACE5002D0AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE66BCA4273FACE5002D0AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE66BCAB273FB360002D0AEC /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		CE66BCAE273FBBD2002D0AEC /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,26 @@
 		CE66BC92273FACE3002D0AEC /* ToDoListApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE66BCAD273FBB1E002D0AEC /* CoreData */,
 				CE66BC93273FACE3002D0AEC /* AppDelegate.swift */,
 				CE66BC95273FACE3002D0AEC /* SceneDelegate.swift */,
-				CE66BC97273FACE3002D0AEC /* ViewController.swift */,
+				CE66BC97273FACE3002D0AEC /* ListController.swift */,
+				CE66BCAB273FB360002D0AEC /* ListViewModel.swift */,
 				CE66BC99273FACE3002D0AEC /* Main.storyboard */,
 				CE66BC9F273FACE5002D0AEC /* Assets.xcassets */,
 				CE66BCA1273FACE5002D0AEC /* LaunchScreen.storyboard */,
 				CE66BCA4273FACE5002D0AEC /* Info.plist */,
-				CE66BC9C273FACE3002D0AEC /* ToDoListApp.xcdatamodeld */,
 			);
 			path = ToDoListApp;
+			sourceTree = "<group>";
+		};
+		CE66BCAD273FBB1E002D0AEC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CE66BC9C273FACE3002D0AEC /* ToDoListApp.xcdatamodeld */,
+				CE66BCAE273FBBD2002D0AEC /* CoreDataController.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE66BC98273FACE3002D0AEC /* ViewController.swift in Sources */,
+				CE66BCAC273FB360002D0AEC /* ListViewModel.swift in Sources */,
+				CE66BC98273FACE3002D0AEC /* ListController.swift in Sources */,
+				CE66BCAF273FBBD2002D0AEC /* CoreDataController.swift in Sources */,
 				CE66BC94273FACE3002D0AEC /* AppDelegate.swift in Sources */,
 				CE66BC96273FACE3002D0AEC /* SceneDelegate.swift in Sources */,
 				CE66BC9E273FACE3002D0AEC /* ToDoListApp.xcdatamodeld in Sources */,
@@ -293,6 +309,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QV4M89666W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoListApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -320,6 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QV4M89666W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToDoListApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
